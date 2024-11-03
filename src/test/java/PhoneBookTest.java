@@ -18,4 +18,16 @@ class PhoneBookTest {
                 + PhoneBook.add("Olya", "89260000001");
         assertEquals(result, 5);
     }
+
+    @Test
+    public void testFindByNumber() {
+        PhoneBook.add("Petya", "89260000000");
+        assertEquals("Petya", PhoneBook.findByNumber("89260000000"));
+    }
+
+    @Test
+    public void testFindByNumberNotFind() {
+        PhoneBook.add("Petya", "89260000000");
+        assertEquals("No name", PhoneBook.findByNumber("89260000001"));
+    }
 }
